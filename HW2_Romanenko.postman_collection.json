@@ -1,0 +1,1047 @@
+{
+	"info": {
+		"_postman_id": "a68ae4b1-d202-4a25-88ec-3660c2ab80ca",
+		"name": "HW2_Romanenko",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "По названию города ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f60350d4-e37c-4786-8091-d7d8d2c0f750",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=Kiev&APPID=76e845888c9c5f3fa11bdcdd8e908fde\n",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Kiev"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По названию города не валидное значение",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=Кiеv&APPID=76e845888c9c5f3fa11bdcdd8e908fde\n",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Кiеv"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По названию города и коду страны",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "348bbc6b-061a-4434-a633-74f766ffb1ee",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=Kiev,ua&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Kiev,ua"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По названию города и коду страны не валидное значение",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=2508,Уа&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "2508,Уа"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По идентификатору",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "80f74047-c955-4b73-bf54-aada112efb3d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?id=703448&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "703448"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По идентификатору не валидное значение",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?id=Kiev&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "Kiev"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По географическим координатам",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "857d0f73-fdef-4723-b34f-80d401b476de",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?lat=50.43&lon=30.52&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "50.43"
+						},
+						{
+							"key": "lon",
+							"value": "30.52"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По географическим координатам не валидное значение",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?lat=тут&lon=там&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "тут"
+						},
+						{
+							"key": "lon",
+							"value": "там"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По почтовому индексу",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "52cc84c3-9783-4552-9b65-652dc3267045",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?zip=04215,ua&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "zip",
+							"value": "04215,ua"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "По почтовому индексу не валидное значение",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?zip=Kiev,ua&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "zip",
+							"value": "Kiev,ua"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Города в пределах прямоугольной зоны",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5996bb86-6167-45fc-8f57-706255054a93",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/box/city?bbox=50,30,30,50,10&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"box",
+						"city"
+					],
+					"query": [
+						{
+							"key": "bbox",
+							"value": "50,30,30,50,10"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Города в пределах прямоугольной зоны не валидное значение",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/box/city?bbox=aa,bb,cc,dd,10&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"box",
+						"city"
+					],
+					"query": [
+						{
+							"key": "bbox",
+							"value": "aa,bb,cc,dd,10"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Города в цикле",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "293803cd-e79d-4df9-9c93-ba31115ef485",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/find?lat=55.43&lon=30.52&cnt=10&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"find"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "55.43"
+						},
+						{
+							"key": "lon",
+							"value": "30.52"
+						},
+						{
+							"key": "cnt",
+							"value": "10"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Города в цикле не валидное значение",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/find?lat=aa&lon=aa&cnt=10&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"find"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "aa"
+						},
+						{
+							"key": "lon",
+							"value": "aa"
+						},
+						{
+							"key": "cnt",
+							"value": "10"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вызов нескольких идентификаторов города",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7322fd08-6d98-4510-999a-46e3aa48abe8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/group?id=400013287,703448,703447&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"group"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "400013287,703448,703447"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вызов нескольких идентификаторов города не валидное значение",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/group?id=Kiev,703448,703447&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"group"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "Kiev,703448,703447"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Формат XML",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=KIev&mode=xml&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "KIev"
+						},
+						{
+							"key": "mode",
+							"value": "xml"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Формат HTML ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "74ee9d81-030a-49e5-aea5-4b22897121c3",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=KIev&mode=html&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "KIev"
+						},
+						{
+							"key": "mode",
+							"value": "html"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Формат единиц standard",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e293a73c-174a-4f44-9b8c-05748c7116b5",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/find?q=Kiev&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"find"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Kiev"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Формат единиц metric  ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5a5011aa-0d4a-473a-bae9-069212fc890e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/find?q=Kiev&units=metric&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"find"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Kiev"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Формат единиц imperial  ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "087dae61-cde0-46d0-9d75-97e448882363",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/find?q=Kiev&units=imperial&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"find"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Kiev"
+						},
+						{
+							"key": "units",
+							"value": "imperial"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Код языка Arabic - ar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a6520a9-b487-44bc-a6dd-373ceb42cb15",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=kiev&lang=ar&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "kiev"
+						},
+						{
+							"key": "lang",
+							"value": "ar"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Код языка русский - ru",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0921876f-32b1-4abd-98f1-50c81a6d8ae7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=kiev&lang=ru&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "kiev"
+						},
+						{
+							"key": "lang",
+							"value": "ru"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Код языка китайский традиционный - zh_tw.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "112a6ff2-980f-4d29-b6af-e2a3682890a9",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=kiev&lang=zh_tw&APPID=76e845888c9c5f3fa11bdcdd8e908fde",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "kiev"
+						},
+						{
+							"key": "lang",
+							"value": "zh_tw"
+						},
+						{
+							"key": "APPID",
+							"value": "76e845888c9c5f3fa11bdcdd8e908fde"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
